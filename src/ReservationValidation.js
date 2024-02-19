@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import axios from 'axios';
+import './App.css';
 
 function ReservationValidation() {
   const [validationCode, setValidationCode] = useState('');
@@ -16,20 +17,28 @@ function ReservationValidation() {
     }
   };
 
+  // Función para generar asteriscos basados en la longitud de la cadena
+  const generateStars = (length) => {
+    return '*'.repeat(length);
+  };
+
   return (
-    <div>
-      <h2>Validación de Reservación</h2>
-      <form onSubmit={handleSubmit}>
-        <label htmlFor="validationCode">Ingrese los 4 dígitos:</label>
-        <input
-          type="text"
-          id="validationCode"
-          value={validationCode}
-          onChange={(e) => setValidationCode(e.target.value)}
-        />
-        <button type="submit">Validar</button>
-      </form>
-      {validationResult && <p>{validationResult}</p>}
+    <div className="App">
+      <header className="App-header">
+      <img src="/check.gif" alt="Check GIF" style={{ maxWidth: '100%', width: '200px', borderRadius: '50%'}} /> 
+        <h2>Validación de Reservación</h2>
+        <form onSubmit={handleSubmit}>
+          <label htmlFor="validationCode">Ingrese los 4 dígitos:</label>
+          <input
+            type="text"
+            id="validationCode"
+            value={generateStars(validationCode.length)} // Muestra asteriscos en lugar de dígitos
+            onChange={(e) => setValidationCode(e.target.value)}
+          />
+          <button type="submit" className="button-57">Validar</button>
+        </form>
+        {validationResult && <p>{validationResult}</p>}
+      </header>
     </div>
   );
 }

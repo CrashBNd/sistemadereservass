@@ -7,6 +7,107 @@
 input {
   caret-color: red;
 }
+.styled-table {
+  border-collapse: collapse;
+  margin: 25px 0;
+  font-size: 0.9em;
+  font-family: sans-serif;
+  min-width: 400px;
+  box-shadow: 0 0 20px rgba(255, 255, 255, 0.15);
+}
+.styled-table thead tr {
+  background-color: #396f70;
+  color: #cae9e9;
+  text-align: left;
+}
+.styled-table th,
+.styled-table td {
+    padding: 12px 15px;
+}
+.styled-table tbody tr {
+  border-bottom: 1px solid #e5f4f4;
+}
+
+.styled-table tbody tr:nth-of-type(even) {
+  background-color: #e5f4f4;
+}
+
+.styled-table tbody tr:last-of-type {
+  border-bottom: 2px solid #396f70;
+}
+.styled-table tbody tr.active-row {
+    font-weight: bold;
+    color: #396f70;
+}
+
+/* CSS */
+.button-57 {
+  background-color: #396f70;
+  border: 0;
+  border-radius: 56px;
+  color: #fff;
+  cursor: pointer;
+  display: inline-block;
+  font-family: system-ui,-apple-system,system-ui,"Segoe UI",Roboto,Ubuntu,"Helvetica Neue",sans-serif;
+  font-size: 18px;
+  font-weight: 600;
+  outline: 0;
+  padding: 16px 21px;
+  position: relative;
+  text-align: center;
+  text-decoration: none;
+  transition: all .3s;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+  overflow: hidden;
+}
+
+.button-57:before {
+  background-color: initial;
+  background-image: linear-gradient(#fff 0, rgba(255, 255, 255, 0) 100%);
+  border-radius: 125px;
+  content: "";
+  height: 50%;
+  left: 4%;
+  opacity: .5;
+  position: absolute;
+  top: 0;
+  transition: all .3s;
+  width: 92%;
+}
+
+.button-57:hover {
+  box-shadow: rgba(255, 255, 255, .2) 0 3px 15px inset, rgba(0, 0, 0, .1) 0 3px 5px, rgba(0, 0, 0, .1) 0 10px 13px;
+  transform: scale(1.05);
+}
+
+@media (min-width: 768px) {
+  .button-57 {
+    padding: 16px 48px;
+  }
+}
+.select {
+  padding: 10px;
+  padding-left: 20px;
+  height: 50px;
+  font-size: 14px;
+  border-radius: 50px;
+  box-shadow: inset 6px 6px 6px #cbced1, inset -6px -6px 6px white;
+  width: 100%;
+  margin-top: 5px;
+}
+
+.select:focus {
+  outline: none;
+  border-color: #61dafb; /* Color de borde al estar enfocado */
+}
+
+/* Estilos para el texto dentro del select */
+.select option {
+  color: #333; /* Color del texto dentro del select */
+  background: #fff; /* Fondo de cada opción del select */
+}
 
 /* body {
   margin: 0;
@@ -154,8 +255,8 @@ h1 {
   list-style: none;
   bottom: 0;
   left: 50%;
-  width: 100px;
-  height: 32px;
+  width: 150px;
+  height: 52px;
   border: none;
   background: transparent;
   font-family: inherit;
@@ -187,14 +288,14 @@ h1 {
 }
 
 .button-60 span {
-  position: absolute;
+  position: fixed;
   top: 0;
   left: 0;
   width: 100%;
   height: 100%;
   background: #568c8d;
   color: #fff;
-  font-size: 27px;
+  font-size: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
