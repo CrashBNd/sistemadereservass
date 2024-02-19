@@ -53,14 +53,15 @@ function App() {
             />
           </div>
           <div>
-            <label htmlFor="num_table">Número de Mesa:</label>
+            <label  htmlFor="num_table">Número de Mesa:</label>
             <select
+            
               id="num_table"
               name="num_table"
               value={formData.num_table}
               onChange={handleChange}
             >
-              <option value="">Seleccionar mesa</option>
+              <option className='inputs' value="">Seleccionar mesa</option>
               {[...Array(15)].map((_, index) => (
                 <option key={index} value={index + 1}>{index + 1}</option>
               ))}
